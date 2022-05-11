@@ -56,6 +56,8 @@ git add . ; git commit -a -m "update README" ; git push -u origin main
 ufFEq7exDzRFyDSgUAgMASm+AStcDT+UQ==
 
 ```
+>**Name '8mkc7sa' has to be uniq globally. Here I used GUID**
+
 ### Create a Secret object that contains the Azure File credentials
 ```
 # oc create secret generic storage-file --from-literal=azurestorageaccountname=8mkc7sa --from-literal=azurestorageaccountkey=$ACCOUNT_KEY
