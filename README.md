@@ -347,4 +347,29 @@ spec:
 # oc create job --from=cronjob/cronjob-etcd-backup test-backup-001
 job.batch/test-backup-001 created
 
+# oc get pod
+NAME                       READY   STATUS              RESTARTS   AGE
+test-backup-001--1-wr75d   0/1     ContainerCreating   0          3m20s
+[root@localhost etcd-backup]# oc logs -f test-backup-001--1-wr75d
+
+# oc describe pod test-backup-001--1-wr75d
+...
+Events:
+  Type     Reason       Age                  From               Message
+  ----     ------       ----                 ----               -------
+  Normal   Scheduled    4m2s                 default-scheduler  Successfully assigned etcd-backup/test-backup-001--1-wr75d to aro-cluster-8mkc7-gg7vx-master-2
+  Warning  FailedMount  119s                 kubelet            Unable to attach or mount volumes: unmounted volumes=[etcd-backup], unattached volumes=[kube-api-access-68xws certs conf kubeconfig etcd-backup-script etcd-backup scripts]: timed out waiting for the condition
+  Warning  FailedMount  113s (x9 over 4m2s)  kubelet            MountVolume.SetUp failed for volume "pv0001" : mount failed: exit status 32
+Mounting command: mount
+Mounting arguments: -t cifs -o file_mode=0777,dir_mode=0777,vers=3.0,actimeo=30,mfsymlinks,<masked> //8mkc7sa.file.core.windows.net/share-1 /var/lib/kubelet/pods/f20f3d97-e7ac-4e49-982e-4d5189b9baab/volumes/kubernetes.io~azure-file/pv0001
+Output: mount error(2): No such file or directory
+Refer to the mount.cifs(8) manual page (e.g. man mount.cifs) and kernel log messages (dmesg)
+
+# oc get pv,pvc
+NAME                      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                STORAGECLASS    REASON   AGE
+persistentvolume/pv0001   20Gi       RWX            Retain           Bound    etcd-backup/claim1   azure-file-sc            46m
+
+NAME                           STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS    AGE
+persistentvolumeclaim/claim1   Bound    pv0001   20Gi       RWX            azure-file-sc   45m
+
 ```
