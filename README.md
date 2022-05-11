@@ -388,7 +388,7 @@ persistentvolumeclaim/claim1   Bound    pv0001   20Gi       RWX            azure
 ![LB and PublicIP](images/etcd-backup-02.png)
 
 
-**Select the resource group and click related storage account**
+**click `+ File shares`                       **
 ![LB and PublicIP](images/etcd-backup-03.png)
 
 
