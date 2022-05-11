@@ -1,5 +1,8 @@
 # eycd-backup-azure
 
+**Reference**
+https://gitlab.consulting.redhat.com/customer-success/consulting-engagement-reports/client-cers/asean/cambodia/woori-bank/wb-ocp-4646938/wb-ocp4.9-nonprod#user-content-etcd-backup
+
 **Git**
 ```
 echo "# eycd-backup-azure" >> README.md
