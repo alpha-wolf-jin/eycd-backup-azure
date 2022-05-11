@@ -389,6 +389,7 @@ persistentvolumeclaim/claim1   Bound    pv0001   20Gi       RWX            azure
 
 
 **click `+ File shares`                       **
+
 ![LB and PublicIP](images/etcd-backup-03.png)
 
 
