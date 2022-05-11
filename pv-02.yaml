@@ -1,0 +1,14 @@
+apiVersion: "v1"
+kind: "PersistentVolume"
+metadata:
+  name: "pv0002" 
+spec:
+  capacity:
+    storage: "20Gi" 
+  accessModes:
+    - "ReadWriteOnce"
+  storageClassName: azure-file-sc
+  azureFile:
+    secretName: storage-file
+    shareName: share-2
+    readOnly: false

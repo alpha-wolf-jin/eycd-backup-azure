@@ -353,7 +353,8 @@ job.batch/test-backup-001 created
 # oc get pod
 NAME                       READY   STATUS              RESTARTS   AGE
 test-backup-001--1-wr75d   0/1     ContainerCreating   0          3m20s
-[root@localhost etcd-backup]# oc logs -f test-backup-001--1-wr75d
+
+# oc logs -f test-backup-001--1-wr75d
 
 # oc describe pod test-backup-001--1-wr75d
 ...
@@ -376,3 +377,26 @@ NAME                           STATUS   VOLUME   CAPACITY   ACCESS MODES   STORA
 persistentvolumeclaim/claim1   Bound    pv0001   20Gi       RWX            azure-file-sc   45m
 
 ```
+
+### Login azure portal and creat share
+
+**Select the resource group and click related storage account**
+![LB and PublicIP](images/etcd-backup-01.png)
+
+
+**Select the resource group and click related storage account**
+![LB and PublicIP](images/etcd-backup-02.png)
+
+
+**Select the resource group and click related storage account**
+![LB and PublicIP](images/etcd-backup-03.png)
+
+
+**Select the resource group and click related storage account**
+![LB and PublicIP](images/etcd-backup-04.png)
+
+
+**Select the resource group and click related storage account**
+![LB and PublicIP](images/etcd-backup-05.png)
+
+
