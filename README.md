@@ -405,3 +405,23 @@ persistentvolumeclaim/claim1   Bound    pv0001   20Gi       RWX            azure
 ![LB and PublicIP](images/etcd-backup-05.png)
 
 >the file share should be created before PV creation. And the same shareName should be used during PV creation
+
+
+
+
+### Re-Testing backup job
+
+```
+# oc get job
+NAME              COMPLETIONS   DURATION   AGE
+test-backup-001   0/1           70m        70m
+
+# oc delete job test-backup-001
+
+# oc create job --from=cronjob/cronjob-etcd-backup test-backup-001
+
+# oc get pod
+NAME                       READY   STATUS      RESTARTS   AGE
+test-backup-001--1-9nhps   0/1     Completed   0          4s
+
+```
