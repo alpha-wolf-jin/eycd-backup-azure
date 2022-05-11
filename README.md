@@ -430,6 +430,8 @@ test-backup-001--1-9nhps   0/1     Completed   0          4m12s   10.0.0.9   aro
 
 ![LB and PublicIP](images/etcd-backup-06.png)
 
+> containing both the etcd snapshot and the resources for the static pods, which were from the same backup. The file names in the directory must be in the following formats: snapshot_<datetimestamp>.db and static_kuberesources_<datetimestamp>.tar.gz
+
 # ETCD Restore Step
 
 https://docs.openshift.com/container-platform/4.9/backup_and_restore/control_plane_backup_and_restore/disaster_recovery/scenario-2-restoring-cluster-state.html
