@@ -381,23 +381,27 @@ persistentvolumeclaim/claim1   Bound    pv0001   20Gi       RWX            azure
 ### Login azure portal and creat share
 
 **Select the resource group and click related storage account**
+
 ![LB and PublicIP](images/etcd-backup-01.png)
 
 
 **Click `File shares` at the most left windows**
+
 ![LB and PublicIP](images/etcd-backup-02.png)
 
 
-**click `+ File shares`                       **
+**click `+ File shares`**
 
 ![LB and PublicIP](images/etcd-backup-03.png)
 
 
-**Select the resource group and click related storage account**
+**Put in shareName used in PV creation**
+
 ![LB and PublicIP](images/etcd-backup-04.png)
 
 
-**Select the resource group and click related storage account**
+**New files share created**
+
 ![LB and PublicIP](images/etcd-backup-05.png)
 
-
+>the file share should be created before PV creation. And the same shareName should be used during PV creation
