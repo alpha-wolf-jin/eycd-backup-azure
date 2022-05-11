@@ -420,8 +420,16 @@ test-backup-001   0/1           70m        70m
 
 # oc create job --from=cronjob/cronjob-etcd-backup test-backup-001
 
-# oc get pod
-NAME                       READY   STATUS      RESTARTS   AGE
-test-backup-001--1-9nhps   0/1     Completed   0          4s
+# oc get pod -o wide
+NAME                       READY   STATUS      RESTARTS   AGE     IP         NODE                               NOMINATED NODE   READINESS GATES
+test-backup-001--1-9nhps   0/1     Completed   0          4m12s   10.0.0.9   aro-cluster-8mkc7-gg7vx-master-1   <none>           <none>
 
 ```
+
+### Download backup file from azure portal if needed
+
+![LB and PublicIP](images/etcd-backup-06.png)
+
+# ETCD Restore Step
+
+https://docs.openshift.com/container-platform/4.9/backup_and_restore/control_plane_backup_and_restore/disaster_recovery/scenario-2-restoring-cluster-state.html
